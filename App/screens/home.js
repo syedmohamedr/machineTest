@@ -45,7 +45,6 @@ console.log(items);
         style={styles.renderItemMainContainer}>
         <View style={styles.renderItemFirstSubContainer}>
           <CheckBox
-          
             style={styles.checkBox}
             value={selectedItems.includes(item.idCategory)}
             onValueChange={() => handleToggleItem(item.idCategory)}
