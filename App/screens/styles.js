@@ -44,4 +44,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     padding: 10,
   },
+  text:{
+    color:"#000"
+  }
 });

@@ -45,9 +45,11 @@ console.log(items);
         style={styles.renderItemMainContainer}>
         <View style={styles.renderItemFirstSubContainer}>
           <CheckBox
+          
             style={styles.checkBox}
             value={selectedItems.includes(item.idCategory)}
             onValueChange={() => handleToggleItem(item.idCategory)}
+            tintColor='black'
           />
           <Image
             source={{uri: item.strCategoryThumb}}
@@ -55,12 +57,12 @@ console.log(items);
             style={styles.image}
           />
           <Text
-            style={styles.heading}>
+            style={[styles.heading,styles.text]}>
             {item.strCategory}
           </Text>
         </View>
         <View style={styles.renderItemSecondSubContainer}>
-          <Text numberOfLines={4}>{item.strCategoryDescription}</Text>
+          <Text style={styles.text} numberOfLines={4}>{item.strCategoryDescription}</Text>
         </View>
       </View>
     );
@@ -94,8 +96,8 @@ console.log(items);
   return (
     <View style={styles.container}>
       {renderSearchbar()}
-      {error?<Text>{error}</Text>:null}
-      {loading ?<Text>Loading............!!</Text> :renderDisplayData()}
+      {error?<Text style={styles.text}>{error}</Text>:null}
+      {loading ?<Text style={styles.text}>Loading............!!</Text> :renderDisplayData()}
     </View>
   );
 };
