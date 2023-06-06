@@ -30,6 +30,7 @@ console.log(items);
   const onChange = textValue => {
     setSearchText(textValue);
   };
+
   const handleToggleItem = itemId => {
     if (selectedItems.includes(itemId)) {
       setSelectedItems(selectedItems.filter(item => item !== itemId));
@@ -37,6 +38,7 @@ console.log(items);
       setSelectedItems([...selectedItems, itemId]);
     }
   };
+  
   const renderItem = ({item}) => {
     return (
       <View
@@ -92,6 +94,7 @@ console.log(items);
   return (
     <View style={styles.container}>
       {renderSearchbar()}
+      {error?<Text>{error}</Text>:null}
       {loading ?<Text>Loading............!!</Text> :renderDisplayData()}
     </View>
   );
